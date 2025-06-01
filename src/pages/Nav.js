@@ -1,5 +1,11 @@
+import Dropdown from "../components/forms/Dropdown";
+
 function Nav() {
-  return <div>NAv</div>;
+  return (
+    <div>
+      <Dropdown></Dropdown>
+    </div>
+  );
 }
 
 export default Nav;
