@@ -1,7 +1,7 @@
 import Link from "./Link";
 
-function Dropdown() {
-    return <div><Link></Link></div>
+function Dropdown({ children }) {
+  return <div>{children}</div>;
 }
 
 export default Dropdown;
