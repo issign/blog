@@ -18,7 +18,7 @@ function Nav() {
   const renderedPosts = Array.from(categories).map((category, i) => {
     const relatedPosts = posts.filter((post) => post.category == category);
     return (
-      <Dropdown names={relatedPosts} key={i}>
+      <Dropdown posts={relatedPosts} key={i}>
         {category}
       </Dropdown>
     );
@@ -26,7 +26,7 @@ function Nav() {
 
   return (
     <div>
-      <Dropdown>소개</Dropdown>
+      {/* <Dropdown>소개</Dropdown> */}
       {renderedPosts}
     </div>
   );

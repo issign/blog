@@ -1,5 +1,5 @@
-function Link() {
-  return <div>Link</div>;
+function Link({ children }) {
+  return <div>{children}</div>;
 }
 
 export default Link;

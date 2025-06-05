@@ -3,32 +3,32 @@
     {
       "id": 1,
       "name": "React",
-      "category": "development"
+      "category": "개발"
     },
     {
       "id": 2,
       "name": "Redux",
-      "category": "development"
+      "category": "개발"
     },
     {
       "id": 3,
       "name": "Node.js",
-      "category": "development"
+      "category": "개발"
     },
     {
       "id": 4,
       "name": "Seoul",
-      "category": "restaurants"
+      "category": "맛집"
     },
     {
       "id": 5,
       "name": "Incheon",
-      "category": "restaurants"
+      "category": "맛집"
     },
     {
       "id": 6,
       "name": "Montreal",
-      "category": "restaurants"
+      "category": "맛집"
     }
   ]
 }
