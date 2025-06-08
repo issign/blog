@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Dropdown from "../components/forms/Dropdown";
 import Link from "../components/links/Link";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 function Nav() {
   const [posts, setPosts] = useState([]);
@@ -30,8 +33,15 @@ function Nav() {
       <div>
         <Link>SIGN</Link>
       </div>
-      {/* <Dropdown>소개</Dropdown> */}
-      {renderedPosts}
+      <div>
+        {/* <Dropdown>소개</Dropdown> */}
+        {renderedPosts}
+      </div>
+      <div>
+        <FaGithub />
+        <FaInstagram />
+        <FaFacebook />
+      </div>
     </div>
   );
 }
