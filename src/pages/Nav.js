@@ -18,14 +18,12 @@ function Nav() {
     fetchPosts();
   }, []);
 
+  // Find all the categories.
   const categories = new Set(posts.map((post) => post.category));
+  // And find the posts which have the same category.
   const renderedPosts = Array.from(categories).map((category, i) => {
     const relatedPosts = posts.filter((post) => post.category == category);
-    return (
-      <Dropdown posts={relatedPosts} key={i}>
-        {category}
-      </Dropdown>
-    );
+    return <Dropdown name={category} posts={relatedPosts} key={i} />;
   });
 
   return (
@@ -34,7 +32,6 @@ function Nav() {
         <Link>SIGN</Link>
       </div>
       <div>
-        {/* <Dropdown>소개</Dropdown> */}
         {renderedPosts}
       </div>
       <div>

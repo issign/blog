@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "../links/Link";
 
-function Dropdown({ posts, children }) {
+function Dropdown({ posts, name }) {
   const [isOpen, setIsOpen] = useState(false);
   const divEl = useRef();
 
@@ -29,7 +29,7 @@ function Dropdown({ posts, children }) {
 
   return (
     <div ref={divEl}>
-      <div onClick={handleClick}>{children}</div>
+      <div onClick={handleClick}>{name}</div>
       {isOpen && <div>{renderedPosts}</div>}
     </div>
   );

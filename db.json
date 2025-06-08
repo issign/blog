@@ -1,6 +1,11 @@
 {
   "posts": [
     {
+      "id": 0,
+      "name": "",
+      "category": "소개"
+    },
+    {
       "id": 1,
       "name": "React",
       "category": "개발"
