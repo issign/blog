@@ -26,6 +26,7 @@ function Dropdown({ posts, children }) {
   const renderedPosts = posts.map((post) => {
     return <Link key={post.id}>{post.name}</Link>;
   });
+
   return (
     <div ref={divEl}>
       <div onClick={handleClick}>{children}</div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Dropdown from "../components/forms/Dropdown";
+import Link from "../components/forms/Link";
 
 function Nav() {
   const [posts, setPosts] = useState([]);
@@ -26,6 +27,9 @@ function Nav() {
 
   return (
     <div>
+      <div>
+        <Link>SIGN</Link>
+      </div>
       {/* <Dropdown>소개</Dropdown> */}
       {renderedPosts}
     </div>
