@@ -27,17 +27,15 @@ function Nav() {
   });
 
   return (
-    <div>
-      <div>
-        <Link>SIGN</Link>
-      </div>
-      <div>
+    <div className="w-screen flex justify-between items-center fixed px-30 h-25">
+      <Link>SIGN</Link>
+      <div className="flex justify-between items-center w-80">
         {renderedPosts}
       </div>
-      <div>
-        <FaGithub />
-        <FaInstagram />
-        <FaFacebook />
+      <div className="flex justify-between items-center">
+        <FaGithub className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
+        <FaInstagram className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
+        <FaFacebook className="text-3xl ml-4 cursor-pointer hover:text-cyan-500" />
       </div>
     </div>
   );
