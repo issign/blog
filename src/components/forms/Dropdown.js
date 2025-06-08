@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import Link from "./Link";
+import Link from "../links/Link";
 
 function Dropdown({ posts, children }) {
   const [isOpen, setIsOpen] = useState(false);

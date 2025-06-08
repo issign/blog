@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Dropdown from "../components/forms/Dropdown";
-import Link from "../components/forms/Link";
+import Link from "../components/links/Link";
 
 function Nav() {
   const [posts, setPosts] = useState([]);
