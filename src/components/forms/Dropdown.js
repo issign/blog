@@ -29,7 +29,9 @@ function Dropdown({ posts, name }) {
 
   return (
     <div ref={divEl} className="relative">
-      <Link onSubmit={handleClick}>{name}</Link>
+      <Link onSubmit={handleClick} to="/a">
+        {name}
+      </Link>
       {isOpen && <div className="absolute">{renderedPosts}</div>}
     </div>
   );

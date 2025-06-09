@@ -1,12 +1,19 @@
-function Link({ onSubmit, children }) {
-  const handleClick = () => {
+import { useContext } from "react";
+import NavigationContext from "../context/navigation";
+
+function Link({ to, onSubmit, children }) {
+  const { navigate } = useContext(NavigationContext);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate(to);
     onSubmit();
   };
 
   return (
-    <div className="text-2xl cursor-pointer" onClick={handleClick}>
+    <a href={to} onClick={handleClick} className="text-2xl cursor-pointer">
       {children}
-    </div>
+    </a>
   );
 }
 
