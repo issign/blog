@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "categories": [
     {
       "id": 0,
       "name": "",
@@ -34,6 +34,24 @@
       "id": 6,
       "name": "Montreal",
       "category": "맛집"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "categoryID": 1,
+      "title": "useState",
+      "date": "2025-06-08",
+      "titleImage": "Image 1",
+      "content": "Content 1"
+    },
+    {
+      "id": 2,
+      "categoryID": 1,
+      "title": "Redux",
+      "date": "2025-06-07",
+      "titleImage": "Image 2",
+      "content": "Content 2"
     }
   ]
 }

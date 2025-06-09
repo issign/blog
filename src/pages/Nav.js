@@ -10,7 +10,7 @@ function Nav() {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:3001/posts");
+    const res = await axios.get("http://localhost:3001/categories");
     setPosts(res.data);
   };
 
