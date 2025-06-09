@@ -1,7 +1,11 @@
 import Nav from "./pages/Nav";
 
 function App() {
-    return <h1><Nav/></h1>
+  return (
+    <div>
+      <Nav />
+    </div>
+  );
 }
 
 export default App;

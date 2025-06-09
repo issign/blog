@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme {
+  --color-antique-white: #faf1cd;
+  --color-eclipse: #2f3148;
+}
