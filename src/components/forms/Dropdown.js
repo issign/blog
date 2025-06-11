@@ -8,10 +8,11 @@ function Dropdown({ category }) {
   const divEl = useRef();
 
   const fetchSubCategories = async () => {
-    const res = await axios.get("http://localhost:3001/sub-categories");
-    setSubCategories(
-      res.data.filter((subCategory) => category.id == subCategory.categoryID)
-    );
+    const res = await axios.get("http://localhost:3001/sub-categories", {
+      params: { categoryID: category.id },
+    });
+
+    setSubCategories(res.data);
   };
 
   useEffect(() => {
@@ -33,10 +34,10 @@ function Dropdown({ category }) {
     setIsOpen(!isOpen);
   };
 
-  const renderedSubCategories = subCategories.map((category) => {
+  const renderedSubCategories = subCategories.map((subCategory) => {
     return (
-      <Link key={category.id} to={category.path}>
-        {category.label}
+      <Link key={subCategory.id} to={category.path + subCategory.path}>
+        {subCategory.label}
       </Link>
     );
   });
