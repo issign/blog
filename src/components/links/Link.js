@@ -10,7 +10,11 @@ function Link({ to, children }) {
   };
 
   return (
-    <a href={to} onClick={handleClick} className="text-2xl cursor-pointer">
+    <a
+      href={to}
+      onClick={handleClick}
+      className="text-2xl cursor-pointer block"
+    >
       {children}
     </a>
   );
