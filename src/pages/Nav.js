@@ -29,9 +29,15 @@ function Nav() {
         {renderedDropdown}
       </div>
       <div className="flex justify-between items-center">
-        <FaGithub className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
-        <FaInstagram className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
-        <FaFacebook className="text-3xl ml-4 cursor-pointer hover:text-cyan-500" />
+        <a href="https://github.com/issign?tab=repositories" target="_blank">
+          <FaGithub className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
+        </a>
+        <a href="https://www.instagram.com/kiho_lee2734/" target="_blank">
+          <FaInstagram className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
+        </a>
+        <a href="https://www.facebook.com/kiho.lee.993081" target="_blank">
+          <FaFacebook className="text-3xl ml-4 cursor-pointer hover:text-cyan-500" />
+        </a>
       </div>
     </div>
   );
