@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import NavigationContext from "../context/navigation";
 
-function Link({ to, onSubmit, children }) {
+function Link({ to, children }) {
   const { navigate } = useContext(NavigationContext);
 
   const handleClick = (e) => {
     e.preventDefault();
     navigate(to);
-    onSubmit();
   };
 
   return (
