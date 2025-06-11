@@ -1,11 +1,21 @@
 import { useState, useEffect, useRef } from "react";
+import axios from "axios";
 import Link from "../links/Link";
 
-function Dropdown({ posts, name }) {
+function Dropdown({ category }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [subCategories, setSubCategories] = useState([]);
   const divEl = useRef();
 
+  const fetchSubCategories = async () => {
+    const res = await axios.get("http://localhost:3001/sub-categories");
+    setSubCategories(
+      res.data.filter((subCategory) => category.id == subCategory.categoryID)
+    );
+  };
+
   useEffect(() => {
+    fetchSubCategories();
     const handler = (event) => {
       if (!divEl.current.contains(event.target)) {
         setIsOpen(false);
@@ -23,16 +33,20 @@ function Dropdown({ posts, name }) {
     setIsOpen(!isOpen);
   };
 
-  const renderedPosts = posts.map((post) => {
-    return <Link key={post.id}>{post.name}</Link>;
+  const renderedSubCategories = subCategories.map((category) => {
+    return (
+      <Link key={category.id} to={category.path}>
+        {category.label}
+      </Link>
+    );
   });
 
   return (
     <div ref={divEl} className="relative">
-      <Link onSubmit={handleClick} to="/a">
-        {name}
+      <Link onSubmit={handleClick} to={category.path}>
+        {category.label}
       </Link>
-      {isOpen && <div className="absolute">{renderedPosts}</div>}
+      {isOpen && <div className="absolute">{renderedSubCategories}</div>}
     </div>
   );
 }

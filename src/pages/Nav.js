@@ -7,30 +7,26 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
 function Nav() {
-  const [posts, setPosts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-  const fetchPosts = async () => {
+  const fetchCategories = async () => {
     const res = await axios.get("http://localhost:3001/categories");
-    setPosts(res.data);
+    setCategories(res.data);
   };
 
   useEffect(() => {
-    fetchPosts();
+    fetchCategories();
   }, []);
 
-  // Find all the categories.
-  const categories = new Set(posts.map((post) => post.category));
-  // And find the posts which have the same category.
-  const renderedPosts = Array.from(categories).map((category, i) => {
-    const relatedPosts = posts.filter((post) => post.category == category);
-    return <Dropdown name={category} posts={relatedPosts} key={i} />;
+  const renderedDropdown = categories.map((category) => {
+    return <Dropdown category={category} key={category.id} />;
   });
 
   return (
     <div className="w-screen flex justify-between items-center fixed px-30 h-25 bg-antique-white text-eclipse">
-      <Link to="/">SIGN</Link>
+      <Link to="/">SIGN.</Link>
       <div className="flex justify-between items-center w-80">
-        {renderedPosts}
+        {renderedDropdown}
       </div>
       <div className="flex justify-between items-center">
         <FaGithub className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
