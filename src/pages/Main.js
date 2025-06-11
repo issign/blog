@@ -1,5 +1,12 @@
+import Route from "../components/links/Route";
+
 function Main() {
-  return <div></div>;
+  return (
+    <div>
+      <Route path="/create">
+      </Route>
+    </div>
+  );
 }
 
 export default Main;
