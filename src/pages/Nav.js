@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Dropdown from "../components/forms/Dropdown";
 import Link from "../components/links/Link";
+import Icon from "../components/links/Icon";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -29,15 +30,15 @@ function Nav() {
         {renderedDropdown}
       </div>
       <div className="flex justify-between items-center">
-        <a href="https://github.com/issign?tab=repositories" target="_blank">
-          <FaGithub className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
-        </a>
-        <a href="https://www.instagram.com/kiho_lee2734/" target="_blank">
-          <FaInstagram className="text-3xl mx-4 cursor-pointer hover:text-cyan-500" />
-        </a>
-        <a href="https://www.facebook.com/kiho.lee.993081" target="_blank">
-          <FaFacebook className="text-3xl ml-4 cursor-pointer hover:text-cyan-500" />
-        </a>
+        <Icon to={"https://github.com/issign?tab=repositories"}>
+          <FaGithub />
+        </Icon>
+        <Icon to={"https://www.instagram.com/kiho_lee2734/"}>
+          <FaInstagram />
+        </Icon>
+        <Icon to={"https://www.facebook.com/kiho.lee.993081"}>
+          <FaFacebook />
+        </Icon>
       </div>
     </div>
   );
