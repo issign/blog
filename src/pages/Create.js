@@ -17,9 +17,6 @@ function Create() {
 
   return (
     <div>
-      <div>1</div>
-      <div>1</div>
-      <div>1</div>
       <div className="flex justify-center items-center h-screen">
         <ReactQuillEditor value={content} onChange={handleEditorChange} />
       </div>

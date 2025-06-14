@@ -24,7 +24,7 @@ function Nav() {
   });
 
   return (
-    <div className="w-screen flex justify-between items-center fixed px-30 h-25 bg-antique-white text-eclipse">
+    <div className="w-screen flex justify-between items-center fixed px-20 h-25">
       <Link to="/">SIGN.</Link>
       <div className="flex justify-between items-center w-80">
         {renderedDropdown}
