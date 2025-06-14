@@ -1,5 +1,5 @@
 import ReactQuill from "react-quill-new";
-import "react-quill-new/dist/quill.snow.css"; //import2
+import "react-quill-new/dist/quill.snow.css";
 
 function ReactQuillEditor({ style, value, onChange }) {
   const modules = {
@@ -12,14 +12,12 @@ function ReactQuillEditor({ style, value, onChange }) {
     },
   };
   return (
-    <>
-      <ReactQuill
-        style={style}
-        modules={modules}
-        value={value}
-        onChange={onChange}
-      />
-    </>
+    <ReactQuill
+      style={style}
+      modules={modules}
+      value={value}
+      onChange={onChange}
+    />
   );
 }
 export default ReactQuillEditor;

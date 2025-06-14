@@ -8,6 +8,10 @@ function Create() {
     setContent(value); // 상태 업데이트
   };
 
+  const handleCreate = () => {
+    console.log(content);
+  };
+
   return (
     <div>
       <div>1</div>
@@ -20,6 +24,8 @@ function Create() {
         onChange={handleEditorChange}
         style={{ width: "100%", height: "100%" }}
       />
+
+      <div onClick={handleCreate}>Create</div>
     </div>
   );
 }
