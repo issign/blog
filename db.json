@@ -16,7 +16,6 @@
       "path": "/restaurants"
     }
   ],
-
   "sub-categories": [
     {
       "id": 1,
@@ -31,7 +30,6 @@
       "path": "/useState"
     }
   ],
-
   "posts": [
     {
       "id": 1,
@@ -42,12 +40,8 @@
       "content": "Content 1"
     },
     {
-      "id": 2,
-      "categoryID": 1,
-      "title": "Redux",
-      "date": "2025-06-07",
-      "titleImage": "Image 2",
-      "content": "Content 2"
+      "content": "<p>asfafasf</p><p>adaadas<strong>asdasdads</strong></p>",
+      "id": 2
     }
   ]
 }

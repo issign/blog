@@ -1,15 +1,18 @@
 import React, { useState } from "react";
+import axios from "axios";
 import ReactQuillEditor from "../components/forms/ReactQuillEditor";
 
 function Create() {
   const [content, setContent] = useState("");
 
   const handleEditorChange = (value) => {
-    setContent(value); // 상태 업데이트
+    setContent(value);
   };
 
-  const handleCreate = () => {
-    console.log(content);
+  const handleCreate = async () => {
+    const res = await axios.post("http://localhost:3001/posts", {
+      content,
+    });
   };
 
   return (
@@ -17,13 +20,9 @@ function Create() {
       <div>1</div>
       <div>1</div>
       <div>1</div>
-      <div>1</div>
-
-      <ReactQuillEditor
-        value={content}
-        onChange={handleEditorChange}
-        style={{ width: "100%", height: "100%" }}
-      />
+      <div className="flex justify-center items-center h-screen">
+        <ReactQuillEditor value={content} onChange={handleEditorChange} />
+      </div>
 
       <div onClick={handleCreate}>Create</div>
     </div>

@@ -1,7 +1,7 @@
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 
-function ReactQuillEditor({ style, value, onChange }) {
+function ReactQuillEditor({ value, onChange }) {
   const modules = {
     toolbar: {
       container: [
@@ -13,7 +13,7 @@ function ReactQuillEditor({ style, value, onChange }) {
   };
   return (
     <ReactQuill
-      style={style}
+      className="w-5/6 h-5/6"
       modules={modules}
       value={value}
       onChange={onChange}
