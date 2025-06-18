@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useFetchCategoriesQuery } from "../store";
 import Dropdown from "../components/forms/Dropdown";
 import Link from "../components/links/Link";
 import Icon from "../components/links/Icon";
@@ -8,20 +7,14 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
 function Nav() {
-  const [categories, setCategories] = useState([]);
+  const { data: categories, error, isLoading } = useFetchCategoriesQuery();
 
-  const fetchCategories = async () => {
-    const res = await axios.get("http://localhost:3001/categories");
-    setCategories(res.data);
-  };
-
-  useEffect(() => {
-    fetchCategories();
-  }, []);
-
-  const renderedDropdown = categories.map((category) => {
-    return <Dropdown category={category} key={category.id} />;
-  });
+  let renderedDropdown;
+  if (!isLoading) {
+    renderedDropdown = categories.map((category) => {
+      return <Dropdown category={category} key={category.id} />;
+    });
+  }
 
   return (
     <div className="w-screen flex justify-between items-center fixed px-20 h-25">

@@ -1,29 +1,24 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import Link from "../links/Link";
+import { useFetchSubCategoriesQuery } from "../../store";
 
 function Dropdown({ category }) {
-  const [subCategories, setSubCategories] = useState([]);
+  const {
+    data: subCategories,
+    error,
+    isLoading,
+  } = useFetchSubCategoriesQuery(category);
 
-  const fetchSubCategories = async () => {
-    const res = await axios.get("http://localhost:3001/sub-categories", {
-      params: { categoryID: category.id },
+  // Render sub-categories list for a specific category
+  let renderedSubCategories;
+  if (!isLoading) {
+    renderedSubCategories = subCategories.map((subCategory) => {
+      return (
+        <Link key={subCategory.id} to={category.path + subCategory.path}>
+          {subCategory.label}
+        </Link>
+      );
     });
-
-    setSubCategories(res.data);
-  };
-
-  useEffect(() => {
-    fetchSubCategories();
-  }, []);
-
-  const renderedSubCategories = subCategories.map((subCategory) => {
-    return (
-      <Link key={subCategory.id} to={category.path + subCategory.path}>
-        {subCategory.label}
-      </Link>
-    );
-  });
+  }
 
   return (
     <div className="relative group">
