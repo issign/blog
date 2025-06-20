@@ -11,11 +11,9 @@ function Nav() {
   const { data: categories, error, isLoading } = useFetchCategoriesQuery();
 
   let renderedDropdown;
-  // if (isLoading) {
-  //   return <Skeleton times={3} className="h-10 w-10"></Skeleton>;
-  // }
-
-  if (!isLoading) {
+  if (isLoading) {
+    renderedDropdown = <Skeleton times={3} className="h-8 w-15"></Skeleton>;
+  } else {
     renderedDropdown = categories.map((category) => {
       return <Dropdown category={category} key={category.id} />;
     });
