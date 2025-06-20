@@ -3,4 +3,11 @@
 @theme {
   --color-primary-color: #fffbed;
   --color-eclipse: #2f3148;
+
+  --animate-shimmer: shimmer 1.5s infinite;
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
 }

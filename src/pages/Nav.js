@@ -1,5 +1,6 @@
 import { useFetchCategoriesQuery } from "../store";
 import Dropdown from "../components/forms/Dropdown";
+import Skeleton from "../components/skeleton/Skeleton";
 import Link from "../components/links/Link";
 import Icon from "../components/links/Icon";
 import { FaGithub } from "react-icons/fa";
@@ -10,6 +11,10 @@ function Nav() {
   const { data: categories, error, isLoading } = useFetchCategoriesQuery();
 
   let renderedDropdown;
+  // if (isLoading) {
+  //   return <Skeleton times={3} className="h-10 w-10"></Skeleton>;
+  // }
+
   if (!isLoading) {
     renderedDropdown = categories.map((category) => {
       return <Dropdown category={category} key={category.id} />;
