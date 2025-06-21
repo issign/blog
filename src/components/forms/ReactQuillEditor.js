@@ -16,7 +16,7 @@ function ReactQuillEditor({ value, onChange }) {
       modules={modules}
       value={value}
       onChange={onChange}
-      className="h-screen"
+     
     />
   );
 }
