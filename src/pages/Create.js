@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Modal from "../components/forms/Modal";
 import ReactQuillEditor from "../components/forms/ReactQuillEditor";
 
 function Create() {
