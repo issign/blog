@@ -40,10 +40,11 @@
     {
       "id": 1,
       "categoryID": 1,
-      "title": "useState",
+      "label": "useState",
       "date": "2025-06-08",
-      "titleImage": "Image 1",
-      "content": "Content 1"
+      "image": "Image 1",
+      "content": "Content 1",
+      "path": "/id"
     },
     {
       "content": "<p>asfafasf</p><p>adaadas<strong>asdasdads</strong></p>",
