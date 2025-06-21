@@ -3,7 +3,7 @@ import Create from "./Create";
 
 function Main() {
   return (
-    <div className="pt-25">
+    <div className="pt-20">
       <Route path="/create">
         <Create></Create>
       </Route>

@@ -20,16 +20,19 @@ function Nav() {
   }
 
   return (
-    <div className="w-screen flex justify-between items-center fixed px-20 h-25">
+    <div className="flex justify-between items-center fixed h-20 w-[calc(100vw-160px)]">
       <Link to="/">SIGN.</Link>
       <div className="flex justify-between items-center w-80">
         {renderedDropdown}
       </div>
       <div className="flex justify-between items-center">
-        <Icon to={"https://github.com/issign?tab=repositories"}>
+        <Icon
+          to={"https://github.com/issign?tab=repositories"}
+          className="mr-10"
+        >
           <FaGithub />
         </Icon>
-        <Icon to={"https://www.instagram.com/kiho_lee2734/"}>
+        <Icon to={"https://www.instagram.com/kiho_lee2734/"} className="mr-10">
           <FaInstagram />
         </Icon>
         <Icon to={"https://www.facebook.com/kiho.lee.993081"}>

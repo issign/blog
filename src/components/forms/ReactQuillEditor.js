@@ -13,10 +13,10 @@ function ReactQuillEditor({ value, onChange }) {
   };
   return (
     <ReactQuill
-      className="w-5/6 h-5/6"
       modules={modules}
       value={value}
       onChange={onChange}
+      className="h-screen"
     />
   );
 }
