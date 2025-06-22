@@ -1,7 +1,7 @@
 import Link from "../links/Link";
 import { useFetchSubCategoriesQuery } from "../../store";
 
-function Dropdown({ category }) {
+function Dropdown({ category, topNav }) {
   const {
     data: subCategories,
     error,
@@ -9,9 +9,9 @@ function Dropdown({ category }) {
   } = useFetchSubCategoriesQuery(category);
 
   // Render sub-categories list for a specific category
-  let renderedSubCategories;
+  let renderedNav;
   if (!isLoading) {
-    renderedSubCategories = subCategories.map((subCategory) => {
+    renderedNav = subCategories.map((subCategory) => {
       return (
         <Link key={subCategory.id} to={category.path + subCategory.path}>
           {subCategory.label}
@@ -23,9 +23,7 @@ function Dropdown({ category }) {
   return (
     <div className="relative group">
       <Link to={category.path}>{category.label}</Link>
-      <div className="absolute hidden group-hover:block">
-        {renderedSubCategories}
-      </div>
+      <div className="absolute hidden group-hover:block">{renderedNav}</div>
     </div>
   );
 }

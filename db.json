@@ -39,7 +39,7 @@
   "posts": [
     {
       "id": 1,
-      "categoryID": 1,
+      "subCategoryID": 1,
       "label": "useState",
       "date": "2025-06-08",
       "image": "Image 1",
