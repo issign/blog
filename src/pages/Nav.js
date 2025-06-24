@@ -1,24 +1,17 @@
 import { useFetchCategoriesQuery } from "../store";
 import Dropdown from "../components/forms/Dropdown";
-import Skeleton from "../components/skeleton/Skeleton";
+import Skeleton from "../components/loading/Skeleton";
 import Link from "../components/links/Link";
 import Icon from "../components/links/Icon";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
-function Nav() {
-  const { data: categories, error, isLoading } = useFetchCategoriesQuery();
+function Nav({ categories, subCategories }) {
 
-  // fetch한 data가 loading 중일 때
-  let renderedDropdown;
-  if (isLoading) {
-    renderedDropdown = <Skeleton times={3} className="h-8 w-15"></Skeleton>;
-  } else {
-    renderedDropdown = categories.map((category) => {
-      return <Dropdown category={category} key={category.id} />;
-    });
-  }
+  const renderedDropdown = categories.map((category) => {
+    return <Dropdown category={category} key={category.id} />;
+  });
 
   return (
     <div className="flex justify-between items-center fixed h-20 w-[calc(100vw-160px)]">

@@ -21,10 +21,13 @@ function App() {
     isLoading: isSubCategoriesLoading,
   } = useFetchAllSubCategoriesQuery();
 
+  // It needs to be modified as a loading page at the beginning
+  if (isCategoriesLoading || isSubCategoriesLoading) return <p>Loading...</p>;
+
   return (
     <div className="bg-primary-color text-eclipse px-20">
       <Route path="/">
-        <Nav />
+        <Nav categories={categories} subCategories={subCategories} />
         <Main />
       </Route>
       <Route path="/create">
