@@ -7,13 +7,22 @@ const subCategoriesApi = createApi({
   }),
   endpoints(builder) {
     return {
-      // get all the sub-categories
+      // get all sub-categories
+      fetchAllSubCategories: builder.query({
+        query: () => {
+          return {
+            url: "/sub-categories",
+            method: "GET",
+          };
+        },
+      }),
+      // get the specific sub-categories
       fetchSubCategories: builder.query({
         query: (category) => {
           return {
             url: "/sub-categories",
             params: {
-                categoryID: category.id
+              categoryID: category.id,
             },
             method: "GET",
           };
@@ -23,5 +32,6 @@ const subCategoriesApi = createApi({
   },
 });
 
-export const { useFetchSubCategoriesQuery } = subCategoriesApi;
+export const { useFetchAllSubCategoriesQuery, useFetchSubCategoriesQuery } =
+  subCategoriesApi;
 export { subCategoriesApi };

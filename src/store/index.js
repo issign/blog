@@ -24,5 +24,8 @@ export const store = configureStore({
 setupListeners(store.dispatch);
 
 export { useFetchCategoriesQuery } from "./apis/categoriesApi";
-export { useFetchSubCategoriesQuery } from "./apis/subCategoriesApi";
+export {
+  useFetchAllSubCategoriesQuery,
+  useFetchSubCategoriesQuery,
+} from "./apis/subCategoriesApi";
 export { useFetchPostsQuery, useAddPostMutation } from "./apis/postsApi";

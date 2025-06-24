@@ -10,6 +10,7 @@ import { FaFacebook } from "react-icons/fa";
 function Nav() {
   const { data: categories, error, isLoading } = useFetchCategoriesQuery();
 
+  // fetch한 data가 loading 중일 때
   let renderedDropdown;
   if (isLoading) {
     renderedDropdown = <Skeleton times={3} className="h-8 w-15"></Skeleton>;

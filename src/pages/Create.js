@@ -66,7 +66,7 @@ function Create() {
           className="px-5 py-10 text-4xl w-[calc(100vw-160px)]"
         />
         <ReactQuillEditor value={content} onChange={handleEditorChange} />
-        <button>만들기</button>
+        <Button primary>만들기</Button>
       </form>
       {showModal && (
         <Modal onClose={handleClose} actionBar={actionBar}>
