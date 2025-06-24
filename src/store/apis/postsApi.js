@@ -13,9 +13,23 @@ const postsApi = createApi({
           return {
             url: "/posts",
             params: {
-                subCategoryID: subCategory.id
+              subCategoryID: subCategory.id,
             },
             method: "GET",
+          };
+        },
+      }),
+      //  create a new post
+      addPost: builder.mutation({
+        query: (post) => {
+          return {
+            url: "/posts",
+            method: "POST",
+            body: {
+              title: post.title,
+              date: post.date,
+              content: post.content,
+            },
           };
         },
       }),
@@ -23,5 +37,5 @@ const postsApi = createApi({
   },
 });
 
-export const { useFetchPostsQuery } = postsApi;
+export const { useFetchPostsQuery, useAddPostMutation } = postsApi;
 export { postsApi };

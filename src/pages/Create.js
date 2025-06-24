@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Modal from "../components/forms/Modal";
 import Button from "../components/forms/Button";
+import { useAddPostMutation } from "../store";
 import ReactQuillEditor from "../components/forms/ReactQuillEditor";
 
 function Create() {
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [addPost, result] = useAddPostMutation();
 
   const handleEditorChange = (value) => {
     setContent(value);
@@ -26,7 +28,16 @@ function Create() {
   };
 
   const handleCreate = () => {
-    console.log("good");
+    const today = new Date();
+    const post = {
+      title,
+      content,
+      date: `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`,
+    };
+
+    addPost(post);
+
+    setShowModal(false);
   };
 
   const actionBar = (

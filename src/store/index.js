@@ -25,4 +25,4 @@ setupListeners(store.dispatch);
 
 export { useFetchCategoriesQuery } from "./apis/categoriesApi";
 export { useFetchSubCategoriesQuery } from "./apis/subCategoriesApi";
-export { useFetchPostsQuery } from "./apis/postsApi";
+export { useFetchPostsQuery, useAddPostMutation } from "./apis/postsApi";
