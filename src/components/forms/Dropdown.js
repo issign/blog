@@ -1,7 +1,7 @@
 import Link from "../links/Link";
 import { useFetchSubCategoriesQuery } from "../../store";
 
-function Dropdown({ category, topNav }) {
+function Dropdown({ category }) {
   const {
     data: subCategories,
     error,
