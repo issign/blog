@@ -28,10 +28,10 @@ function App() {
     <div className="bg-primary-color text-eclipse px-20">
       <Route path="/">
         <Nav categories={categories} subCategories={subCategories} />
-        <Main />
+        <Main categories={categories} subCategories={subCategories} />
       </Route>
       <Route path="/create">
-        <Create />
+        <Create categories={categories} subCategories={subCategories} />
       </Route>
     </div>
   );

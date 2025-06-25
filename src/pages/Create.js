@@ -4,7 +4,7 @@ import Button from "../components/forms/Button";
 import { useAddPostMutation } from "../store";
 import ReactQuillEditor from "../components/forms/ReactQuillEditor";
 
-function Create() {
+function Create({ categories, subCategories }) {
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
