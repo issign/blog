@@ -1,4 +1,4 @@
-import Dropdown from "../components/forms/Dropdown";
+import NavDropdown from "../components/links/NavDropdown";
 import Skeleton from "../components/loading/Skeleton";
 import Link from "../components/links/Link";
 import Icon from "../components/links/Icon";
@@ -14,7 +14,7 @@ function Nav({ categories, subCategories }) {
       (subCategory) => subCategory.categoryID == category.id
     );
     return (
-      <Dropdown
+      <NavDropdown
         options={filteredSubCategories}
         category={category}
         key={category.id}

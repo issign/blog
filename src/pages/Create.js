@@ -62,7 +62,7 @@ function Create({ categories, subCategories }) {
           type="text"
           value={title}
           onChange={handleChangeTitle}
-          placeholder="주제"
+          placeholder="제목을 작성해주세요"
           className="px-5 py-10 text-4xl w-[calc(100vw-160px)]"
         />
         <ReactQuillEditor value={content} onChange={handleEditorChange} />
