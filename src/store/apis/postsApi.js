@@ -29,6 +29,8 @@ const postsApi = createApi({
               title: post.title,
               date: post.date,
               content: post.content,
+              categoryID: post.categoryID,
+              subCategoryID: post.subCategoryID,
             },
           };
         },

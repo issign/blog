@@ -38,10 +38,20 @@
   ],
   "posts": [
     {
-      "title": "2222",
-      "date": "2025-6-24",
-      "content": "<p>222222</p>",
-      "id": 6
+      "title": "512521",
+      "date": "2025-6-25",
+      "content": "<p>1241243</p>",
+      "categoryID": 2,
+      "subCategoryID": 2,
+      "id": 8
+    },
+    {
+      "title": "sfs",
+      "date": "2025-6-25",
+      "content": "<p>asfsa</p>",
+      "categoryID": 2,
+      "subCategoryID": 1,
+      "id": 9
     }
   ]
 }

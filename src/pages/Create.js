@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "../components/forms/Modal";
 import Button from "../components/forms/Button";
+import Dropdown from "../components/forms/Dropdown";
 import { useAddPostMutation } from "../store";
 import ReactQuillEditor from "../components/forms/ReactQuillEditor";
 
@@ -9,15 +10,33 @@ function Create({ categories, subCategories }) {
   const [title, setTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [addPost, result] = useAddPostMutation();
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
+  const [filteredSubCategories, setFilteredSubCategories] = useState([]);
+
+  // For tracking changed inputs
+  const handleChangeTitle = (e) => {
+    setTitle(e.target.value);
+  };
 
   const handleEditorChange = (value) => {
     setContent(value);
   };
 
-  const handleChangeTitle = (e) => {
-    setTitle(e.target.value);
+  // After choosing a category, sub-categories will be filterd
+  const handleSelectCategory = (option) => {
+    setSelectedCategory(option);
+    const updatedSubCategories = subCategories.filter(
+      (subCategory) => subCategory.categoryID == option.id
+    );
+    setFilteredSubCategories(updatedSubCategories);
   };
 
+  const handleSelectSubCategory = (option) => {
+    setSelectedSubCategory(option);
+  };
+
+  // Open the modal
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setShowModal(true);
@@ -27,12 +46,15 @@ function Create({ categories, subCategories }) {
     setShowModal(false);
   };
 
+  // POST request for a new post
   const handleCreate = () => {
     const today = new Date();
     const post = {
       title,
       content,
       date: `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`,
+      categoryID: selectedCategory.id,
+      subCategoryID: selectedSubCategory.id,
     };
 
     addPost(post);
@@ -65,6 +87,20 @@ function Create({ categories, subCategories }) {
           placeholder="제목을 작성해주세요"
           className="px-5 py-10 text-4xl w-[calc(100vw-160px)]"
         />
+        <Dropdown
+          options={categories}
+          selection={selectedCategory}
+          placeholder="카테고리"
+          onSelect={handleSelectCategory}
+        ></Dropdown>
+        {selectedCategory && (
+          <Dropdown
+            options={filteredSubCategories}
+            selection={selectedSubCategory}
+            placeholder="하위 카테고리"
+            onSelect={handleSelectSubCategory}
+          ></Dropdown>
+        )}
         <ReactQuillEditor value={content} onChange={handleEditorChange} />
         <Button primary>만들기</Button>
       </form>
