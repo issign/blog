@@ -1,4 +1,3 @@
-import { useFetchCategoriesQuery } from "../store";
 import Dropdown from "../components/forms/Dropdown";
 import Skeleton from "../components/loading/Skeleton";
 import Link from "../components/links/Link";
@@ -8,9 +7,18 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
 function Nav({ categories, subCategories }) {
-
+  // Showing Dropdown component with the same categories
   const renderedDropdown = categories.map((category) => {
-    return <Dropdown category={category} key={category.id} />;
+    const filteredSubCategories = subCategories.filter(
+      (subCategory) => subCategory.categoryID == category.id
+    );
+    return (
+      <Dropdown
+        options={filteredSubCategories}
+        category={category}
+        key={category.id}
+      />
+    );
   });
 
   return (

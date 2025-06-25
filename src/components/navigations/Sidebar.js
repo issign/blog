@@ -14,7 +14,6 @@ function Sidebar() {
     isLoading: isSubCategoriesLoading,
   } = useFetchAllSubCategoriesQuery();
 
-  console.log(categories);
   return <div>Sidebar</div>;
 }
 

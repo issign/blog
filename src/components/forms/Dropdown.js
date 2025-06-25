@@ -1,24 +1,14 @@
 import Link from "../links/Link";
-import { useFetchSubCategoriesQuery } from "../../store";
 
-function Dropdown({ category }) {
-  const {
-    data: subCategories,
-    error,
-    isLoading,
-  } = useFetchSubCategoriesQuery(category);
-
-  // Render sub-categories list for a specific category
-  let renderedNav;
-  if (!isLoading) {
-    renderedNav = subCategories.map((subCategory) => {
-      return (
-        <Link key={subCategory.id} to={category.path + subCategory.path}>
-          {subCategory.label}
-        </Link>
-      );
-    });
-  }
+// category is an object and options are a list of objects
+function Dropdown({ category, options }) {
+  const renderedNav = options.map((subCategory) => {
+    return (
+      <Link key={subCategory.id} to={category.path + subCategory.path}>
+        {subCategory.label}
+      </Link>
+    );
+  });
 
   return (
     <div className="relative group">
