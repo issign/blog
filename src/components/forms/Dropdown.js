@@ -2,10 +2,10 @@ import Link from "../links/Link";
 
 // category is an object and options are a list of objects
 function Dropdown({ category, options }) {
-  const renderedNav = options.map((subCategory) => {
+  const renderedNav = options.map((option) => {
     return (
-      <Link key={subCategory.id} to={category.path + subCategory.path}>
-        {subCategory.label}
+      <Link key={option.id} to={option.path}>
+        {option.label}
       </Link>
     );
   });

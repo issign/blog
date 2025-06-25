@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
+// props : all categories and sub-categories
 function Nav({ categories, subCategories }) {
   // Showing Dropdown component with the same categories
   const renderedDropdown = categories.map((category) => {
@@ -23,7 +24,9 @@ function Nav({ categories, subCategories }) {
 
   return (
     <div className="flex justify-between items-center fixed h-20 w-[calc(100vw-160px)]">
-      <Link to="/">SIGN.</Link>
+      <Link to="/" className="font-bold">
+        SIGN.
+      </Link>
       <div className="flex justify-between items-center w-80">
         {renderedDropdown}
       </div>
