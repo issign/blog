@@ -9,6 +9,9 @@ function Main({ categories, subCategories }) {
     isLoading: isPostsLoading,
   } = useFetchPostsQuery();
 
+  // Need to modify this in the future
+  if (isPostsLoading) return <p>Posts Loading...</p>;
+
   return (
     <div className="pt-20">
       <Sidebar
