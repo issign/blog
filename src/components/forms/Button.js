@@ -11,7 +11,7 @@ function Button({
   rounded,
   ...rest
 }) {
-  const classes = classNames("px-3 py-1.5 border", {
+  const classes = classNames("px-3 py-1.5 border cursor-pointer rounded-sm", {
     "border-blue-500 bg-blue-500 text-white": primary,
     "border-gray-900 bg-gray-900 text-white": secondary,
     "border-green-500 bg-green-500 text-white": success,
