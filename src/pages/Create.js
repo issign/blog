@@ -100,8 +100,8 @@ function Create({ categories, subCategories }) {
 
   const modalContent = (
     <div>
-      <h3>제목 : {title}</h3>
-      <h4>생성하시겠습니까?</h4>
+      <p className="text-2xl mb-5">제목 : {title}</p>
+      <p>생성하시겠습니까?</p>
     </div>
   );
 
