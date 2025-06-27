@@ -36,12 +36,38 @@ function Create({ categories, subCategories }) {
     setSelectedSubCategory(option);
   };
 
-  // Open the modal
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setShowModal(true);
+  // Validate the inputs before post request
+  const validate = (title, content, selectedCategory, selectedSubCategory) => {
+    if (!title) {
+      alert("제목을 작성해주세요.");
+      return;
+    } else if (!content) {
+      alert("내용을 작성해주세요.");
+      return;
+    } else if (!selectedCategory) {
+      alert("카테고리를 정해주세요.");
+      return;
+    } else if (!selectedSubCategory) {
+      alert("하위 카테고리를 정해주세요.");
+      return;
+    } else {
+      return true;
+    }
   };
 
+  // Open the modal for creating a new post
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const valid = validate(
+      title,
+      content,
+      selectedCategory,
+      selectedSubCategory
+    );
+    if (valid) setShowModal(true);
+  };
+
+  // Close the modal
   const handleClose = () => {
     setShowModal(false);
   };
@@ -62,6 +88,7 @@ function Create({ categories, subCategories }) {
     setShowModal(false);
   };
 
+  // Button for the modal
   const actionBar = (
     <div>
       <Button primary onClick={handleCreate}>
