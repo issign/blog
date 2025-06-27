@@ -17,7 +17,6 @@ function Main({ categories, subCategories }) {
       <Sidebar
         categories={categories}
         subCategories={subCategories}
-        posts={posts}
       ></Sidebar>
     </div>
   );
