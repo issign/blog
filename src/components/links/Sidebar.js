@@ -14,7 +14,7 @@ function Sidebar({ categories, subCategories }) {
       ></NestedMenu>
     );
   });
-  return <div>{renderedLists}</div>;
+  return <div className="pb-10">{renderedLists}</div>;
 }
 
 export default Sidebar;

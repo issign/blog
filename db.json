@@ -38,44 +38,13 @@
   ],
   "posts": [
     {
-      "title": "512521",
-      "date": "2025-6-25",
-      "content": "<p>1241243</p>",
-      "categoryID": 2,
-      "subCategoryID": 2,
-      "id": 8
-    },
-    {
-      "title": "sfs",
-      "date": "2025-6-25",
-      "content": "<p>asfsa</p>",
-      "categoryID": 2,
-      "subCategoryID": 1,
-      "id": 9
-    },
-    {
-      "title": "test1",
+      "title": "11111",
+      "content": "<p>123123</p>",
       "date": "2025-6-27",
-      "content": "<p>content1</p>",
-      "categoryID": 2,
-      "subCategoryID": 2,
-      "id": 10
-    },
-    {
-      "title": "test2",
-      "date": "2025-6-27",
-      "content": "<p>content2</p>",
       "categoryID": 3,
       "subCategoryID": 3,
-      "id": 11
-    },
-    {
-      "title": "test3",
-      "date": "2025-6-27",
-      "content": "<p>content3</p>",
-      "categoryID": 2,
-      "subCategoryID": 1,
-      "id": 12
+      "path": "j7HBz7wyjP6Vn6CeaZq0E",
+      "id": 13
     }
   ]
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { nanoid } from "nanoid";
 import Modal from "../components/forms/Modal";
 import Button from "../components/forms/Button";
 import Dropdown from "../components/forms/Dropdown";
@@ -65,6 +66,7 @@ function Create({ categories, subCategories }) {
       selectedCategory,
       selectedSubCategory
     );
+
     if (isValid) setShowModal(true);
   };
 
@@ -82,6 +84,7 @@ function Create({ categories, subCategories }) {
       date: `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`,
       categoryID: selectedCategory.id,
       subCategoryID: selectedSubCategory.id,
+      path: nanoid(),
     };
 
     addPost(post);

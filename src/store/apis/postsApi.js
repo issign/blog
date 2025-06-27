@@ -22,13 +22,7 @@ const postsApi = createApi({
           return {
             url: "/posts",
             method: "POST",
-            body: {
-              title: post.title,
-              date: post.date,
-              content: post.content,
-              categoryID: post.categoryID,
-              subCategoryID: post.subCategoryID,
-            },
+            body: post,
           };
         },
       }),
