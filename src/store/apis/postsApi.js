@@ -9,12 +9,9 @@ const postsApi = createApi({
     return {
       // get all the posts
       fetchPosts: builder.query({
-        query: (subCategory) => {
+        query: () => {
           return {
             url: "/posts",
-            params: {
-              subCategoryID: subCategory.id,
-            },
             method: "GET",
           };
         },
