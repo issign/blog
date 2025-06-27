@@ -1,6 +1,9 @@
 import { useState } from "react";
+import Panel from "../ui/Panel";
+import { FaChevronDown } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa";
 
-function Dropdown({ options, selection, placeholder, onSelect }) {
+function Dropdown({ options, selection, placeholder, onSelect, className }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -14,7 +17,11 @@ function Dropdown({ options, selection, placeholder, onSelect }) {
 
   const renderedOption = options?.map((option) => {
     return (
-      <div onClick={() => handleOptionClick(option)} key={option.id}>
+      <div
+        onClick={() => handleOptionClick(option)}
+        key={option.id}
+        className="bg-white py-2 pl-2"
+      >
         {option.label}
       </div>
     );
@@ -26,9 +33,16 @@ function Dropdown({ options, selection, placeholder, onSelect }) {
   }
 
   return (
-    <div>
-      <div onClick={handleClick}>{content}</div>
-      {isOpen && <div>{renderedOption}</div>}
+    <div className="cursor-pointer bg-primary-color text-black rounded-md text-lg relative">
+      <div onClick={handleClick} className="flex justify-start">
+        <div className="px-4 py-3">{content}</div>
+        <Panel className="px-4">
+          {isOpen ? <FaChevronDown /> : <FaChevronLeft />}
+        </Panel>
+      </div>
+      <div className="absolute w-40 z-99">
+        {isOpen && <div>{renderedOption}</div>}
+      </div>
     </div>
   );
 }
