@@ -58,13 +58,13 @@ function Create({ categories, subCategories }) {
   // Open the modal for creating a new post
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const valid = validate(
+    const isValid = validate(
       title,
       content,
       selectedCategory,
       selectedSubCategory
     );
-    if (valid) setShowModal(true);
+    if (isValid) setShowModal(true);
   };
 
   // Close the modal
@@ -114,20 +114,23 @@ function Create({ categories, subCategories }) {
           placeholder="제목을 작성해주세요"
           className="px-5 py-10 text-4xl w-[calc(100vw-160px)]"
         />
-        <Dropdown
-          options={categories}
-          selection={selectedCategory}
-          placeholder="카테고리"
-          onSelect={handleSelectCategory}
-        ></Dropdown>
-        {selectedCategory && (
+        <div className="">
           <Dropdown
-            options={filteredSubCategories}
-            selection={selectedSubCategory}
-            placeholder="하위 카테고리"
-            onSelect={handleSelectSubCategory}
+            options={categories}
+            selection={selectedCategory}
+            placeholder="카테고리"
+            onSelect={handleSelectCategory}
           ></Dropdown>
-        )}
+          {selectedCategory && (
+            <Dropdown
+              options={filteredSubCategories}
+              selection={selectedSubCategory}
+              placeholder="하위 카테고리"
+              onSelect={handleSelectSubCategory}
+            ></Dropdown>
+          )}
+        </div>
+
         <ReactQuillEditor value={content} onChange={handleEditorChange} />
         <Button primary>만들기</Button>
       </form>
