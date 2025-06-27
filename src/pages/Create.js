@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "../components/forms/Modal";
 import Button from "../components/forms/Button";
 import Dropdown from "../components/forms/Dropdown";
+import Panel from "../components/ui/Panel";
 import { useAddPostMutation } from "../store";
 import ReactQuillEditor from "../components/forms/ReactQuillEditor";
 
@@ -105,16 +106,16 @@ function Create({ categories, subCategories }) {
   );
 
   return (
-    <div className="flex justify-center items-center">
+    <Panel>
       <form onSubmit={handleFormSubmit} className="w-[calc(100vw-160px)] h-100">
         <input
           type="text"
           value={title}
           onChange={handleChangeTitle}
           placeholder="제목을 작성해주세요"
-          className="px-5 py-10 text-4xl w-[calc(100vw-160px)]"
+          className="py-10 text-4xl w-[calc(100vw-160px)] focus:outline-none"
         />
-        <div className="">
+        <Panel className="justify-start">
           <Dropdown
             options={categories}
             selection={selectedCategory}
@@ -129,8 +130,7 @@ function Create({ categories, subCategories }) {
               onSelect={handleSelectSubCategory}
             ></Dropdown>
           )}
-        </div>
-
+        </Panel>
         <ReactQuillEditor value={content} onChange={handleEditorChange} />
         <Button primary>만들기</Button>
       </form>
@@ -139,7 +139,7 @@ function Create({ categories, subCategories }) {
           {modalContent}
         </Modal>
       )}
-    </div>
+    </Panel>
   );
 }
 
