@@ -115,13 +115,16 @@ function Create({ categories, subCategories }) {
           placeholder="제목을 작성해주세요"
           className="py-10 text-4xl w-[calc(100vw-160px)] focus:outline-none"
         />
-        <Panel className="justify-start">
-          <Dropdown
-            options={categories}
-            selection={selectedCategory}
-            placeholder="카테고리"
-            onSelect={handleSelectCategory}
-          ></Dropdown>
+        <Panel className="justify-start mb-5">
+          <div className="mr-2">
+            <Dropdown
+              options={categories}
+              selection={selectedCategory}
+              placeholder="카테고리"
+              onSelect={handleSelectCategory}
+            ></Dropdown>
+          </div>
+
           {selectedCategory && (
             <Dropdown
               options={filteredSubCategories}
