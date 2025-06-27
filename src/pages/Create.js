@@ -107,7 +107,7 @@ function Create({ categories, subCategories }) {
 
   return (
     <Panel>
-      <form onSubmit={handleFormSubmit} className="w-[calc(100vw-160px)] h-100">
+      <form onSubmit={handleFormSubmit} className="w-[calc(100vw-160px)] h-1vh">
         <input
           type="text"
           value={title}
@@ -135,7 +135,9 @@ function Create({ categories, subCategories }) {
           )}
         </Panel>
         <ReactQuillEditor value={content} onChange={handleEditorChange} />
-        <Button primary>만들기</Button>
+        <div className="mt-15 mb-5 flex justify-end">
+          <Button primary>만들기</Button>
+        </div>
       </form>
       {showModal && (
         <Modal onClose={handleClose} actionBar={actionBar}>
