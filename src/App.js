@@ -25,7 +25,7 @@ function App() {
   if (isCategoriesLoading || isSubCategoriesLoading) return <p>Loading...</p>;
 
   return (
-    <div className="bg-primary-color text-eclipse px-20">
+    <div className="bg-background-color text-primary-color px-20">
       <Route path="/">
         <Nav categories={categories} subCategories={subCategories} />
         <Main categories={categories} subCategories={subCategories} />
