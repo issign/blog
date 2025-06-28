@@ -4,7 +4,7 @@ function NestedMenu({ category, subCategory }) {
   const renderedSubCategories = subCategory?.map((subCategory) => {
     return (
       <Link key={subCategory.id} to={subCategory.path}>
-        {subCategory.label}
+        - {subCategory.label}
       </Link>
     );
   });
