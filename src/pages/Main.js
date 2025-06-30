@@ -1,5 +1,5 @@
 import Route from "../components/links/Route";
-import Sidebar from "../components/links/Sidebar";
+import PostsList from "../components/posts/PostsList";
 import { useFetchPostsQuery } from "../store";
 
 function Main({ categories, subCategories }) {
@@ -14,10 +14,9 @@ function Main({ categories, subCategories }) {
 
   return (
     <div className="pt-20">
-      <Sidebar
-        categories={categories}
-        subCategories={subCategories}
-      ></Sidebar>
+      <Route path="/development">
+        <PostsList></PostsList>
+      </Route>
     </div>
   );
 }

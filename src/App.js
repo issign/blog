@@ -1,4 +1,7 @@
+import { useContext } from "react";
+import NavigationContext from "./components/context/navigation";
 import Nav from "./pages/Nav";
+import Sidebar from "./components/links/Sidebar";
 import Main from "./pages/Main";
 import Route from "./components/links/Route";
 import Create from "./pages/Create";
@@ -21,15 +24,28 @@ function App() {
     isLoading: isSubCategoriesLoading,
   } = useFetchAllSubCategoriesQuery();
 
+  // Only the main page will show Nav component
+  const { currentPath } = useContext(NavigationContext);
+
+  const hideMain = ["/create"];
+  const shouldHideMain = hideMain.includes(currentPath);
+
   // It needs to be modified as a loading page at the beginning
   if (isCategoriesLoading || isSubCategoriesLoading) return <p>Loading...</p>;
 
   return (
     <div className="bg-background-color text-primary-color px-20">
-      <Route path="/">
-        <Nav categories={categories} subCategories={subCategories} />
-        <Main categories={categories} subCategories={subCategories} />
-      </Route>
+      {!shouldHideMain && (
+        <Route path="/">
+          <Nav categories={categories} subCategories={subCategories} />
+          <Sidebar
+            categories={categories}
+            subCategories={subCategories}
+          ></Sidebar>
+          <Main categories={categories} subCategories={subCategories} />
+        </Route>
+      )}
+
       <Route path="/create">
         <Create categories={categories} subCategories={subCategories} />
       </Route>

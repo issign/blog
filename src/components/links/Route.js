@@ -4,7 +4,7 @@ import NavigationContext from "../context/navigation";
 function Route({ path, children }) {
   const { currentPath } = useContext(NavigationContext);
 
-  if (path === currentPath) {
+  if (currentPath.startsWith(path)) {
     return children;
   }
 
