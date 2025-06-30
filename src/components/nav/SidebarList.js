@@ -1,6 +1,6 @@
 import Link from "../links/Link";
 
-function NestedMenu({ category, subCategory }) {
+function SidebarList({ category, subCategory }) {
   const renderedSubCategories = subCategory?.map((subCategory) => {
     return (
       <Link key={subCategory.id} to={subCategory.path}>
@@ -17,4 +17,4 @@ function NestedMenu({ category, subCategory }) {
   );
 }
 
-export default NestedMenu;
+export default SidebarList;

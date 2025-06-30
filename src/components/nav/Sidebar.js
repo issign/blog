@@ -1,4 +1,4 @@
-import NestedMenu from "../ui/NestedMenu";
+import SidebarList from "./SidebarList";
 
 function Sidebar({ categories, subCategories }) {
   const renderedLists = categories.map((category) => {
@@ -7,11 +7,11 @@ function Sidebar({ categories, subCategories }) {
     );
 
     return (
-      <NestedMenu
+      <SidebarList
         key={category.id}
         category={category}
         subCategory={filteredSubCategories}
-      ></NestedMenu>
+      ></SidebarList>
     );
   });
   return <div className="pb-10">{renderedLists}</div>;

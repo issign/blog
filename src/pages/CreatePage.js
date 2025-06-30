@@ -7,7 +7,7 @@ import Panel from "../components/ui/Panel";
 import { useAddPostMutation } from "../store";
 import ReactQuillEditor from "../components/forms/ReactQuillEditor";
 
-function Create({ categories, subCategories }) {
+function CreatePage({ categories, subCategories }) {
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -151,4 +151,4 @@ function Create({ categories, subCategories }) {
   );
 }
 
-export default Create;
+export default CreatePage;

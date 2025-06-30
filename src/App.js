@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import NavigationContext from "./components/context/navigation";
-import Nav from "./pages/Nav";
-import Sidebar from "./components/links/Sidebar";
-import Main from "./pages/Main";
+import HomePage from "./pages/HomePage";
+import PostsListPage from "./pages/PostsListPage";
+import Nav from "./components/nav/Nav";
 import Route from "./components/links/Route";
-import Create from "./pages/Create";
+import CreatePage from "./pages/CreatePage";
 import {
   useFetchCategoriesQuery,
   useFetchAllSubCategoriesQuery,
+  useFetchPostsQuery,
 } from "./store";
 
 function App() {
@@ -24,6 +25,12 @@ function App() {
     isLoading: isSubCategoriesLoading,
   } = useFetchAllSubCategoriesQuery();
 
+  const {
+    data: posts,
+    error: postsError,
+    isLoading: isPostsLoading,
+  } = useFetchPostsQuery();
+
   // Only the main page will show Nav component
   const { currentPath } = useContext(NavigationContext);
 
@@ -31,23 +38,28 @@ function App() {
   const shouldHideMain = hideMain.includes(currentPath);
 
   // It needs to be modified as a loading page at the beginning
-  if (isCategoriesLoading || isSubCategoriesLoading) return <p>Loading...</p>;
+  if (isCategoriesLoading || isSubCategoriesLoading || isPostsLoading)
+    return <p>Loading...</p>;
 
   return (
     <div className="bg-background-color text-primary-color px-20">
       {!shouldHideMain && (
-        <Route path="/">
+        <>
           <Nav categories={categories} subCategories={subCategories} />
-          <Sidebar
-            categories={categories}
-            subCategories={subCategories}
-          ></Sidebar>
-          <Main categories={categories} subCategories={subCategories} />
-        </Route>
+          <Route path="/">
+            <HomePage></HomePage>
+          </Route>
+          <Route path="/posts">
+            <PostsListPage
+              categories={categories}
+              subCategories={subCategories}
+            ></PostsListPage>
+          </Route>
+        </>
       )}
 
       <Route path="/create">
-        <Create categories={categories} subCategories={subCategories} />
+        <CreatePage categories={categories} subCategories={subCategories} />
       </Route>
     </div>
   );

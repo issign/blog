@@ -1,7 +1,7 @@
-import NavDropdown from "../components/links/NavDropdown";
-import Skeleton from "../components/loading/Skeleton";
-import Link from "../components/links/Link";
-import Icon from "../components/links/Icon";
+import NavDropdown from "./NavDropdown";
+import Skeleton from "../loading/Skeleton";
+import Link from "../links/Link";
+import Icon from "../links/Icon";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";

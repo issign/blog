@@ -1,4 +1,4 @@
-import Link from "./Link";
+import Link from "../links/Link";
 
 // category is an object and options are a list of objects
 function NavDropdown({ category, options }) {
