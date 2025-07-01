@@ -126,7 +126,7 @@ function CreatePage({ categories, subCategories }) {
               selection={selectedCategory}
               placeholder="카테고리"
               onSelect={handleSelectCategory}
-            ></Dropdown>
+            />
           </div>
 
           {selectedCategory && (
@@ -135,7 +135,7 @@ function CreatePage({ categories, subCategories }) {
               selection={selectedSubCategory}
               placeholder="하위 카테고리"
               onSelect={handleSelectSubCategory}
-            ></Dropdown>
+            />
           )}
         </Panel>
         <ReactQuillEditor value={content} onChange={handleEditorChange} />
@@ -143,8 +143,8 @@ function CreatePage({ categories, subCategories }) {
           <Button primary>만들기</Button>
         </div>
       </form>
-      <div className="w-1/2">
-        <PreviewPage></PreviewPage>
+      <div className="w-1/2 px-10 py-10">
+        <PreviewPage title={title} content={content}></PreviewPage>
       </div>
       {showModal && (
         <Modal onClose={handleClose} actionBar={actionBar}>
