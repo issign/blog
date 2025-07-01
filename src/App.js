@@ -47,7 +47,7 @@ function App() {
         <>
           <Nav categories={categories} subCategories={subCategories} />
           <Route path="/">
-            <HomePage></HomePage>
+            <HomePage posts={posts}></HomePage>
           </Route>
           <Route path="/posts">
             <PostsListPage

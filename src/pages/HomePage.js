@@ -1,10 +1,9 @@
 import PostsList from "../components/posts/PostsList";
-import PostsListItem from "../components/posts/PostsListItem";
 
-function HomePage() {
+function HomePage({ posts }) {
   return (
     <div className="pt-20">
-      <PostsList></PostsList>
+      <PostsList posts={posts}></PostsList>
     </div>
   );
 }
