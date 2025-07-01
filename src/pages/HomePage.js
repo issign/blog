@@ -3,12 +3,7 @@ import PostsListItem from "../components/posts/PostsListItem";
 
 function HomePage() {
   return (
-    <div>
-      <PostsList></PostsList>
-      <PostsList></PostsList>
-      <PostsList></PostsList>
-      <PostsList></PostsList>
-      <PostsList></PostsList>
+    <div className="pt-20">
       <PostsList></PostsList>
     </div>
   );

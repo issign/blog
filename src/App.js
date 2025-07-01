@@ -11,7 +11,7 @@ import {
   useFetchPostsQuery,
 } from "./store";
 
-function App() { 
+function App() {
   // 같은 fetch request가 여러번 일어나지 않게 하기 위해
   const {
     data: categories,
@@ -42,7 +42,7 @@ function App() {
     return <p>Loading...</p>;
 
   return (
-    <div className="bg-background-color text-primary-color px-20">
+    <div className="min-h-screen bg-background-color text-primary-color px-20">
       {!shouldHideMain && (
         <>
           <Nav categories={categories} subCategories={subCategories} />
