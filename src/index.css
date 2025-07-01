@@ -11,3 +11,8 @@
     }
   }
 }
+
+/* style영역은 바깥 <ReactQuill>에만 적용. 실제 텍스트를 입력하는 영역인 .ql-editor은 내부 DOM이라서 스타일이 적용이 안된다. */
+.ql-editor {
+  @apply bg-white text-black;
+}

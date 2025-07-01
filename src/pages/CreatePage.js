@@ -4,6 +4,7 @@ import Modal from "../components/forms/Modal";
 import Button from "../components/forms/Button";
 import Dropdown from "../components/forms/Dropdown";
 import Panel from "../components/ui/Panel";
+import PreviewPage from "./PreviewPage";
 import { useAddPostMutation } from "../store";
 import ReactQuillEditor from "../components/forms/ReactQuillEditor";
 
@@ -109,14 +110,14 @@ function CreatePage({ categories, subCategories }) {
   );
 
   return (
-    <Panel>
-      <form onSubmit={handleFormSubmit} className="w-[calc(100vw-160px)] h-1vh">
+    <div className="flex min-h-screen">
+      <form onSubmit={handleFormSubmit} className="w-1/2 bg-[#4d4d4d] px-10">
         <input
           type="text"
           value={title}
           onChange={handleChangeTitle}
           placeholder="제목을 작성해주세요"
-          className="py-10 text-4xl w-[calc(100vw-160px)] focus:outline-none"
+          className="py-10 text-4xl focus:outline-none"
         />
         <Panel className="justify-start mb-5">
           <div className="mr-2">
@@ -142,12 +143,15 @@ function CreatePage({ categories, subCategories }) {
           <Button primary>만들기</Button>
         </div>
       </form>
+      <div className="w-1/2">
+        <PreviewPage></PreviewPage>
+      </div>
       {showModal && (
         <Modal onClose={handleClose} actionBar={actionBar}>
           {modalContent}
         </Modal>
       )}
-    </Panel>
+    </div>
   );
 }
 

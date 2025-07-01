@@ -42,9 +42,9 @@ function App() {
     return <p>Loading...</p>;
 
   return (
-    <div className="min-h-screen bg-background-color text-primary-color px-20">
+    <div className="min-h-screen bg-background-color text-primary-color">
       {!shouldHideMain && (
-        <>
+        <div className="px-20">
           <Nav categories={categories} subCategories={subCategories} />
           <Route path="/">
             <HomePage posts={posts}></HomePage>
@@ -55,7 +55,7 @@ function App() {
               subCategories={subCategories}
             ></PostsListPage>
           </Route>
-        </>
+        </div>
       )}
 
       <Route path="/create">

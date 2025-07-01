@@ -5,6 +5,7 @@ function ReactQuillEditor({ value, onChange }) {
   const modules = {
     toolbar: {
       container: [
+        ["image"],
         [{ header: [1, 2, 3, false] }],
         ["bold", "italic", "underline", "strike"],
         ["blockquote"],
@@ -19,7 +20,7 @@ function ReactQuillEditor({ value, onChange }) {
       theme="snow"
       value={value}
       onChange={onChange}
-      style={{ color: "black", backgroundColor: "white", height: "70vh" }}
+      style={{ color: "black", backgroundColor: "white", height: "65vh" }}
     />
   );
 }
