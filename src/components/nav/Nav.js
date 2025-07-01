@@ -23,7 +23,7 @@ function Nav({ categories, subCategories }) {
   });
 
   return (
-    <div className="flex justify-between items-center fixed h-20 w-[calc(100vw-160px)]">
+    <div className="flex justify-between items-center fixed left-0 h-20 w-screen px-20 bg-background-color">
       <Link to="/" className="font-bold">
         SIGN.
       </Link>

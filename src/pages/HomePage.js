@@ -5,6 +5,11 @@ function HomePage() {
   return (
     <div>
       <PostsList></PostsList>
+      <PostsList></PostsList>
+      <PostsList></PostsList>
+      <PostsList></PostsList>
+      <PostsList></PostsList>
+      <PostsList></PostsList>
     </div>
   );
 }
